@@ -25,7 +25,8 @@ tar zxf node.tar.gz && cd node-v* && \
 
 sudo su -c "useradd etherpad -s /bin/bash -m" && \
 sudo mkdir /opt/etherpad && chown etherpad:etherpad /opt/etherpad && \
-sudo su etherpad -c "git clone https://github.com/ether/etherpad-lite.git /opt/etherpad"
+sudo su etherpad -c "git clone https://github.com/ether/etherpad-lite.git /opt/etherpad" &&
+sudo su etherpad -c "cd /opt/etherpad && npm install ep_codepad"
 SCRIPT
 
   config.vm.provision "shell", inline: $script
